@@ -23,6 +23,13 @@ def create
   render plain: response_text
   #render plain: "hey this is the create action"
 end
-
+def update
+  id = params[:id]
+  completed = params[:completed]
+  todo = Todo.find(id)
+  todo.completed = completed
+  todo.save!
+  render plain: " updated todo completed status to #{completed}"
+end
 
 end

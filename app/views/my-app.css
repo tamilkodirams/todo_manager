@@ -1,15 +1,83 @@
 body {
-max-width: 600px;
-margin-top: 32px;
-margin-bottom: 0;
-margin-left: auto;
-margin-right: auto;
+font-family: Open Sans, sans-serif;
+max-width: 460px;
+margin: 0 auto;
+margin-top: 60px;
 }
 
 .TodoPage-title {
-  font-size: 48px;
+  font-size: 20px;
   line-height: 1.6;
-  color:#453c52
+  color: #453c52;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.AddTodo-button{
+  font-size: 14px;
+  color: white;
+  background-color: #488878;
+  border:1px solid transparent;
+  padding: 6px 22px;
+  border-radius: 4px;
+}
+
+
+.AddTodo-text{
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #453c52;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1 px solid #bf88cc;
+}
+
+.AddTodo-date {
+  padding: 6px;
+  font-size: 14px;
+  color: #453c52;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #bf88cc;
+
+}
+.AddTodo {
+  display: flex;
+  height: 32px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.TodoItem{
+  font-size: 14px;
+  margin-left: 8 px;
+  margin-bottom: 6px;
+  color: #453c52;
+}
+
+.TodoSectionTitle-title{
+  display: flex;
+  color: #453c52;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.TodoSectionTitle-remainingCount{
+font-size: 12px;
+}
+
+.TodoSectionTitle-text{
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 8px;
+  line-height: 1.4;
+}
+
+.TodoSectionTitle-title{
+  display: flex;
+  color: #453c52;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .TodoSection-title {
@@ -25,10 +93,24 @@ margin-right: auto;
   color:#453c52
 }
 
+.TodoItem-container {
+  display: inline-flex;
+  padding:  2px 8px;
+  align-items: center;
+}
+
+.TodoItem-checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+ul{
+  list-style: none;
+}
 .TodoSection {
-  margin-bottom: 32px;
-  margin-left: 32px;
-  /*background-color: aqua;
+  margin-bottom: 20px;
+  /*margin-left: 32px;
+  background-color: aqua;
   color: rgb(0, 0, 0);
   padding-top: 16px;
   padding-left: 16px;

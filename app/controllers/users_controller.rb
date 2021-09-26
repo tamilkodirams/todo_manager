@@ -29,12 +29,8 @@ class UsersController < ApplicationController
   def login
     email = params[:email]
     password = params[:password]
-    valid = Users.find_by(email_id: email, password: password)
-    if valid
-      render plain: "True"
-    else
-      render plain: "False"
-    end
+    user = Users.find_by(email_id: email, password: password)
+    render plain: user.present?
   end
 
   def show

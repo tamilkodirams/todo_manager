@@ -7,10 +7,8 @@
     <% todos.each do |todo| %>
       <li class="TodoItem">
         <label class="TodoItem-container">
-        <% if completed %>
-        <input class="TodoItem-checkbox" type="checkbox"  checked="true"/>
-        <%end%>
-        <%= todo.todo_text %>
+        <input class="TodoItem-checkbox" type="checkbox"/>
+          <%= todo.todo_text %>
         <% if show_due_date %>
         <p class="TodoItem-dueDate"> <%=todo.due_date.to_s(:short)%> </p>
         <% end %>

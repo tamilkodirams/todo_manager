@@ -9,9 +9,7 @@
         <label class="TodoItem-container">
         <% if completed %>
         <input class="TodoItem-checkbox" type="checkbox"  checked="true"/>
-        <%else%>
-        <input class="TodoItem-checkbox" type="checkbox"/>
-        <%end%>
+        <% end %>
         <%= todo.todo_text %>
         <% if show_due_date %>
         <p class="TodoItem-dueDate"> <%=todo.due_date.to_s(:short)%> </p>

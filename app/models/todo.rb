@@ -15,6 +15,9 @@ class Todo < ActiveRecord::Base
   def self.completed
     all.where(completed: true)
   end
+  def self.complete
+    all.where(completed: false)
+  end
   def self.show_list
     puts "My Todo-List\n\n"
     puts "Overdue\n"

@@ -1,8 +1,5 @@
 class TodosController < ApplicationController
-  skip_before_action :verify_authenticity_token
-
   def index
-    #render plain: Todo.all.map { |todo| todo.to_pleasant_string }.join("\n")
     render "index"
   end
 
@@ -10,7 +7,6 @@ class TodosController < ApplicationController
     id = params[:id]
     todo = Todo.find(id)
     render "todos"
-    #render plain: todo.to_pleasant_string.to_s
   end
 
   def create
@@ -22,8 +18,6 @@ class TodosController < ApplicationController
       completed: false,
     )
     redirect_to todos_path
-    #response_text = "Hey your new todo is created with the id #{new_todo.id}"
-    #render plain: response_text
   end
 
   def update
@@ -32,13 +26,11 @@ class TodosController < ApplicationController
     todo = Todo.find(id)
     todo.completed = completed
     todo.save!
-    #render plain: "updated todo completed status to #{completed}"
     redirect_to todos_path
   end
   def destroy
     id = params[:id]
     users = Todo.destroy(id)
-    #render plain: " deleted user having id  #{id}"
     redirect_to todos_path
   end
 end

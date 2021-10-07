@@ -35,4 +35,10 @@ class TodosController < ApplicationController
     #render plain: "updated todo completed status to #{completed}"
     redirect_to todos_path
   end
+  def destroy
+    id = params[:id]
+    users = Todo.destroy(id)
+    #render plain: " deleted user having id  #{id}"
+    redirect_to todos_path
+  end
 end

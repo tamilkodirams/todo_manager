@@ -30,6 +30,7 @@ class TodosController < ApplicationController
     todo.save!
     redirect_to todos_path
   end
+
   def destroy
     id = params[:id]
     users = Todo.destroy(id)

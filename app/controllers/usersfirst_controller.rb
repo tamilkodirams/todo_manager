@@ -2,14 +2,14 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render plain: Users.all.map { |users| users.to_pleasant_string }.join("\n")
+    render plain: UsersFirst.all.map { |usersfirst| usersfirst.to_pleasant_string }.join("\n")
   end
 
   def create
     name = params[:name]
     email = params[:email]
     password = params[:password]
-    new_user = Users.create(
+    new_user = UsersFirst.create(
       user_name: name,
       email_id: email,
       password: password,
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def update
     id = params[:id]
     password = params[:password]
-    users = Users.find(id)
+    users = UsersFirst.find(id)
     users.save!
     render plain: " updated users password to #{password}"
   end
@@ -29,13 +29,13 @@ class UsersController < ApplicationController
   def login
     email = params[:email]
     password = params[:password]
-    user = Users.find_by(email_id: email, password: password)
+    user = UsersFirst.find_by(email_id: email, password: password)
     render plain: user.present?
   end
 
   def show
     id = params[:id]
-    user = Users.find(id)
+    user = UsersFirst.find(id)
     render plain: user.to_pleasant_string
   end
 end

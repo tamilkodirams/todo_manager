@@ -11,10 +11,10 @@ class UsersController < ApplicationController
       password: params[:password]
     )
       if new_user.save
-        redirect_to "/users/new"
+        redirect_to "/"
       else
         flash[:error] = new_user.errors.full_messages.join(", ")
-        redirect_to "/users/new"
+        redirect_to "/"
       end
   end
 end

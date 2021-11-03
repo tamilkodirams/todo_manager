@@ -7,7 +7,7 @@ class Todo < ActiveRecord::Base
   def due_today?
     due_date == Date.today
   end
-  def self.of_user(user)
+  def self.current_user
     all.where(user_id:user.id)
   end
   def self.overdue
